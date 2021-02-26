@@ -1,0 +1,11 @@
+name: repo dispatch
+on: 
+  repository_dispatch:
+jobs:
+  ONE:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo "Workflow  = "${{ github.workflow }}
+          echo "Action    = "${{ github.event.action }}
