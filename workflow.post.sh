@@ -6,5 +6,5 @@ curl -X POST $gh_dispatch_url \
 -H 'Accept: application/vnd.github.v3+json' \
 -H "Authorization: token $GH_TOKEN" \
 -d '{
-     "ref":"main"
+     "ref":"the.branch"
     }'
