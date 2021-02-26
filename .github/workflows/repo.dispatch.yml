@@ -5,7 +5,11 @@ jobs:
   ONE:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo
-        run: |
-          echo "Workflow  = "${{ github.workflow }}
-          echo "Action    = "${{ github.event.action }}
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Echo Workflow and Action
+      run: |
+        echo "Workflow  = "${{ github.workflow }}
+        echo "Action    = "${{ github.event.action }}
